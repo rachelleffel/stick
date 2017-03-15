@@ -509,7 +509,7 @@ header .hero img {
 
 
   /* CONTENT */
- .sidebar {
+ #sidebar {
    margin: 0;
    width: 350px;
    position: relative;
@@ -518,19 +518,21 @@ header .hero img {
    overflow: scroll;
  }
 
- .sidebar .add-button {
+ #sidebar .add-button {
     padding: 20px 60px;
  }
 
  .add-btn {
     margin: 0 auto;
-    padding: 25px 70px;
+    padding: 25px 0;
     font-weight: 500;
-    display: inline-block;
+    display: block;
+    text-align: center;
  }
 
  .add-btn i {
    width:16px;
+   margin-right: 10px;
 }
 
  .sample-board
@@ -558,6 +560,24 @@ header .hero img {
    position: relative;
    overflow: hidden;
  }
+ .item-box-actions {
+    display: none;
+    width: 100%;
+    background: #1380A8;
+    color: #ffffff;
+    height: 50px;
+    margin: -35px 0;
+}
+
+  .example-note-icons {
+    float:right;
+    margin: 6%;
+    font-size: 20px;
+  }
+
+  .item-box-actions .fa {
+    margin: 0 2px;
+  }
 
  .item-box p {
    font-family: Quicksand;
@@ -598,7 +618,7 @@ header .hero img {
     display: inline-block;
 }
 
-.board-name {
+.note-name {
     margin: 20px 25px;
     padding-top: 1px;
 }
@@ -641,57 +661,73 @@ header .hero img {
     padding-right: 15px;
 }
 
+.left-nav .items ul li .active {
+    color: #0C5069;
+    background-color: #eeeeee;
+    padding-bottom: 15px;
+    border: solid 1px;
+}
 
 /* MEDIA QUERIES */
 
- Larger Mobile Devices 
- @media (min-width:460px) {
-   .sidebar {
-     padding:1.5em 1%;
-     float:right;
-     width:90%;
-     position: relative;
+ /* Larger Mobile Devices */
+ @media (max-width:500px) {
+   #sidebar {
+    width: 245px;
+    float:right;
+    display: inline-block;
+    margin-right: 10px;
    }
-   .content-item {
-     width:46%;
-     margin:0 2% 25px;
-     float:left;
-     display:block;
-   }
+   #sidebar .add-button {
+    padding: 20px 40px 10px;
+  }
+  .add-btn i {
+    margin-right: 9px;
+    margin-left: -10px;
+  }
+   .left-nav{
+    display: inline-block;
+    width: 110px;
+  }
+  .left-nav .site-logo {
+    width: 110px;
+    margin-top: 0;
+    margin-bottom: 10px
+  }
+    .left-nav .settings {
+    width: 110px;
+  }
+  .left-nav .settings p {
+    margin: 0 0 0 2px;
+  }
+  .item-box {
+    height: 175px;
+  }
+
+  .item-box p {
+    height: 200px;
+    font-size: 17px;
+  }
+
  }
 
- Tablets 
- @media (min-width:768px) {
-   .sidebar {
-     padding:1.5em 5%;
-     float:right;
-     width:90%;
-     position: relative;
-   }
-   .sidebar > .container {
-     width:700px;
-   }
-   .content-item {
-     width:31.33333%;
-     margin:0 1% 25px;
-   }
- }
-
-Laptops and Desktops 
- @media (min-width:992px) {
-   .sidebar {
-     padding:1.5em 1%;
-     float:right;
-     width:83.33333333%;
-     position: relative;
-   }
-   .sidebar > .container {
-     width:auto;
-   }
-   .content-item {
-     width:23%;
-     margin:0 1% 25px;
-   }
- }
+ /* Note content on mobile */
 
 
+  @media (max-width:500px) {
+   #sidebar {
+  display: none
+   }
+   .left-nav{
+    display: none;
+    width: 110px;
+    }
+    .main-content {
+      margin: 5px 0px 30px 30px;
+      width: auto;
+      overflow: scroll;
+    }
+    .note-text {
+      width: 80%;
+    }
+}
