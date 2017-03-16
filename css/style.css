@@ -677,6 +677,7 @@ header .hero img {
     float:right;
     display: inline-block;
     margin-right: 10px;
+    overflow: scroll;
    }
    #sidebar .add-button {
     padding: 20px 40px 10px;
@@ -709,11 +710,19 @@ header .hero img {
     font-size: 17px;
   }
 
+  .sample-board .content-item {
+    width: 85%;
+}
+
+  .main-content {
+      overflow: hidden;
+  }
+
  }
 
  /* Note content on mobile */
 
-
+ /*
   @media (max-width:500px) {
    #sidebar {
   display: none
